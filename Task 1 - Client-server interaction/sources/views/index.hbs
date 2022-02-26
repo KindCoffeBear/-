@@ -1,0 +1,23 @@
+<h1 class="text-center my-3">My Instagram</h1>
+<section class="d-flex justify-content-center">
+<form class="d-flex flex-column align-items-center" action ="/photoalbum" method="POST">
+  <div class="mb-3">
+    <input name="description"placeholder="Описание картинки" type="text" class="form-control" id="exampleInputEmail1">
+  </div>
+    <div class="mb-3">
+    <input name="link"placeholder="Ссылка на картинку" type="text" class="form-control" id="exampleInputEmail1">
+  </div>
+  <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+</section>
+<hr/>
+<section class="d-flex flex-column align-items-center">
+    {{#each listOfPictures}}
+        <div class="card my-2" style="width: 18rem;">
+            <img src={{this.link}} class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">{{this.description}}</p>
+            </div>
+        </div>
+    {{/each}}
+</section>
