@@ -1,0 +1,22 @@
+<main class="form-signin text-center my-3" style="width: 100%; max-width: 400px; padding: 15px; margin: auto">
+  <form name="signupform" method="POST" action="/auth/signup">
+    <h1 class="h3 mb-3 fw-normal">Пожалуйста зарегистрируйтесь</h1>
+
+    <div class="form-floating mt-2">
+      <input name="name" type="text" class="form-control" id="floatingText" placeholder="Введите имя">
+      <label for="floatingText">Введите имя</label>
+    </div>
+	
+	<div class="form-floating mt-2">
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="Введите email">
+      <label for="floatingInput">Введите email</label>
+    </div>
+
+    <div class="form-floating mt-2">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Введите пароль">
+      <label for="floatingPassword">Введите пароль</label>
+    </div>
+
+    <button data-submit class="w-100 btn btn-lg btn-primary mt-2" type="submit">Регистрация</button>
+  </form>
+</main>
