@@ -15,6 +15,5 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     semi: ['error', 'never'],
     'no-console': 0,
-    'no-alert': 0,
   },
 }
