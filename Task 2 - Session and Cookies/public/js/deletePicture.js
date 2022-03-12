@@ -3,6 +3,7 @@ const $pictureWr = document.querySelector('[data-pictures]')
 $pictureWr.addEventListener('click', async (e) => {
   if (e.target.dataset.action) {
     const parentId = e.target.closest('[data-id]').dataset.id
+    const pictureId = e.target.closest('[data-pictureId]').dataset.pictureid
 
     const response = await fetch('/pictures', {
       method: 'DELETE',
@@ -12,6 +13,7 @@ $pictureWr.addEventListener('click', async (e) => {
       body: JSON.stringify({
         id: parentId,
         item: e.target.closest('[data-id]'),
+        pictureId,
       }),
     })
 

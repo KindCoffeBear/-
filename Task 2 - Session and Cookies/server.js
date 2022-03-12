@@ -71,6 +71,8 @@ server.post('/photoalbum', (req, res) => {
 
   dataFromForm.id = currentUser.id
 
+  dataFromForm.pictureId = Date.now()
+
   if (dataFromForm.link !== '' && /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._/+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/.test(dataFromForm.link)) {
     db.pictures.push(dataFromForm)
   }
@@ -140,7 +142,7 @@ server.get('/auth/signout', (req, res) => {
 
 server.delete('/pictures', (req, res) => {
   if (req.body.id === req.session.user.id) {
-    db.pictures = db.pictures.filter((el) => el.id !== req.body.id)
+    db.pictures = db.pictures.filter((el) => el.pictureId !== Number(req.body.pictureId))
     res.sendStatus(204)
   } else {
     res.sendStatus(401)
